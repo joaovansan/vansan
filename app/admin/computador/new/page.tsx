@@ -10,11 +10,7 @@ export default function NewComputador() {
         await sql`INSERT INTO computador (marca), modelo) VALUES(${marca}, ${modelo},)`
         console.log("Acessou a função")
     }
-    return (
-	@@ -12,7 +20,6 @@ export default function NewComputador() {
+    
                 
                 <button formAction={saveComputador} className="text-white">Salvar</button>
-            </form>
-        </div>
-
-    )
+}
