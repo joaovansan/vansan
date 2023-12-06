@@ -1,5 +1,5 @@
 import Banner from "./components/Banner";
-import Courses from "./components/Courses";
+import Computadores from "./components/Computadores";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
