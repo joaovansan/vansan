@@ -27,7 +27,7 @@ export default async function ListComputador() {
                                 <td>
                                     <form >
                                      <input type="text" hidden name="id" value={computador.id}/>   
-                                    <button variant = "destructive" formAction={deleteComputador}> Excluir</button>
+                                    <button formAction={deleteComputador}> Excluir</button>
                                     </form>
                                 
                                 </td> 

@@ -3,6 +3,7 @@ export default function Admin(){
         <div>
         <h1 className="text-center text-xl">Seja Bem Vindo a aba de administração</h1>
         <a href="/admin/computador">Listar computadores </a>
+        <a href="/admin/computador/new">Cadastrar computadores</a>
         
       
     
