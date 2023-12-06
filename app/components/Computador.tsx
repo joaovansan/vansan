@@ -1,6 +1,6 @@
 import { sql } from "@vercel/postgres";
 
-export default async function Computadores() {
+export default async function Computador() {
     
     // const courses = [
     //     { title: "Curso de HTML", url: "/img/html.svg", description: "O curso é realizado por..." },

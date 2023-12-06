@@ -1,5 +1,5 @@
 import Banner from "./components/Banner";
-import Computadores from "./components/Computadores";
+import Computadores from "./components/Computador";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
