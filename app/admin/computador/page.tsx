@@ -17,7 +17,7 @@ export default async function ListComputador() {
 
             <table>
                 <thead>
-                    <tr> <td>COMPUTAODR</td> </tr>
+                    <tr> <td>COMPUTADOR</td> </tr>
                 </thead>
                 <tbody>
                     {
