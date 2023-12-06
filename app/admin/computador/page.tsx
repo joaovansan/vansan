@@ -1,22 +1,37 @@
 import { sql } from "@vercel/postgres";
+import { revalidatePath } from "next/cache";
 
 export const revalidate =0
 
-export default async function Listcomputador() {
+export default async function ListComputador() {
+    async function deleteComputador(formData: FormData){
+        "use server"
+        const id = formData.get("id") as string;
+        await sql`DELETE from computador where id=${id}`
+        revalidatePath("/admin/computador")
+    }
     const { rows } = await sql`SELECT * from computador`;
     return (
         <div>
-            <h1 className="text-center text-white">Lista de Computadores</h1>
+            <h1 className="text-center">Lista de Computadores</h1>
 
             <table>
                 <thead>
-                    <tr> <td>Nome do computador </td> <td>Descrição</td></tr>
+                    <tr> <td>COMPUTAODR</td> </tr>
                 </thead>
                 <tbody>
                     {
                         rows.map((computador) => {
                             return (
-                                <tr key={computador.id}><td>{computador.marca}</td> <td>{computador.modelo}</td> </tr>
+                                <tr key={computador.id}><td>{computador.marca}</td> <td>{computador.modelo}</td> 
+                                <td>
+                                    <form >
+                                     <input type="text" hidden name="id" value={computador.id}/>   
+                                    <button formAction={deleteComputador}>Excluir</button>
+                                    </form>
+                                
+                                </td> 
+                                </tr>
                             )
                         })
                     }
