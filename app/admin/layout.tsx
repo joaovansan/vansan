@@ -1,4 +1,3 @@
-import Aside from "../components/Aside"
 import NavBar from "../components/NavBar"
 
 export default function AdminLayout({
@@ -10,7 +9,7 @@ export default function AdminLayout({
         <div className="max-w-[1024px] m-auto">
             <NavBar />
             <div className="flex">
-                <Aside />
+                
                 <div className="p-12 w-screen">
                 {children}
                 </div>
