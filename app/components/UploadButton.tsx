@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 
 export const revalidate = 0
 
-export default function NewCourse({
+export default function NewComputador({
   searchParams,
 }: {
   searchParams?: {
@@ -14,21 +14,21 @@ export default function NewCourse({
 
   const urlImage = searchParams?.url || '';
 
-  async function saveCourse(formData: FormData) {
+  async function saveComputador(formData: FormData) {
     "use server"
-    const title = formData.get("title") as string;
-    const description = formData.get("description") as string;
-    await sql`INSERT INTO courses (title, description,url) VALUES(${title}, ${description}, ${urlImage})`
+    const marca = formData.get("marca") as string;
+    const modelo = formData.get("modelo") as string;
+    await sql`INSERT INTO computador (marca, modelo) VALUES(${marca}, ${modelo})`
     console.log("Acessou a função")
   }
   return (
     <div>
       <form>
-        <input type="text" name="title" placeholder="Digite o Título do Curso" /><br /><br />
-        <input type="text" name="description" placeholder="Digite a Descriçao do curso" /> <br /><br />
+        <input type="text" name="marca" placeholder="Digite a marca do computador " /><br /><br />
+        <input type="text" name="modelo" placeholder="Digite o modelo do computador" /> <br /><br />
         <br />
         <UploadButton /> <br />
-        <button formAction={saveCourse} className="text-black">Salvar</button>
+        <button formAction={saveComputador} className="text-black"> Salvar</button>
       </form>
     </div>
 
