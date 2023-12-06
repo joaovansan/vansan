@@ -10,7 +10,7 @@ export default function Home() {
       <div className="max-w-[-1440px] m-auto ">
         <Header />
         <Banner />
-        <Courses />
+        <Computadores />
         <Footer />
 
         </div>
